@@ -1,0 +1,1618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Miquel Gómez Roura — Senior L&D & Organisational Development</title>
+  <meta name="description" content="Senior Training & L&D and Organisational Development professional with 10+ years building learning functions from scratch at international tech companies." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d0d0d;
+      --bg-card: #1a1a1a;
+      --border: #2a2a2a;
+      --text: #ffffff;
+      --text-muted: #888888;
+      --text-dim: #cccccc;
+      --green: #00e87a;
+      --green-dim: rgba(0,232,122,0.12);
+      --green-border: rgba(0,232,122,0.3);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── NAV ──────────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      background: rgba(13,13,13,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-avail {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      color: var(--green);
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      flex-shrink: 0;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text-muted);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 64px;
+      left: 0;
+      right: 0;
+      background: rgba(13,13,13,0.98);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      z-index: 99;
+      padding: 16px 0;
+    }
+
+    .mobile-menu.open { display: block; }
+
+    .mobile-menu a {
+      display: block;
+      padding: 12px 32px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 15px;
+      transition: color 0.2s;
+    }
+
+    .mobile-menu a:hover { color: var(--text); }
+
+    /* ─── LAYOUT ───────────────────────────────────────────── */
+    main { padding-top: 64px; }
+
+    section {
+      padding: 60px 48px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 12px;
+    }
+
+    h2.section-title {
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+
+    /* ─── HERO ─────────────────────────────────────────────── */
+    #hero {
+      min-height: calc(100vh - 64px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .hero-photo-wrap {
+      flex-shrink: 0;
+    }
+
+    .hero-photo {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--green);
+      background: var(--bg-card);
+      display: block;
+      box-shadow: 0 0 0 6px rgba(0,232,122,0.08);
+    }
+
+    .hero-photo-placeholder {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: var(--bg-card);
+      border: 3px solid var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 13px;
+      box-shadow: 0 0 0 6px rgba(0,232,122,0.08);
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .hero-name-nick {
+      font-size: 1em;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.04em;
+    }
+
+    .hero-greeting {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--green);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .hero-name {
+      font-size: clamp(44px, 7vw, 80px);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: var(--text);
+      line-height: 0.95;
+    }
+
+    .hero-title {
+      font-size: clamp(13px, 1.6vw, 16px);
+      color: var(--text-muted);
+      font-weight: 400;
+      margin-top: -4px;
+    }
+
+    .hero-headline {
+      font-size: clamp(16px, 2vw, 20px);
+      color: var(--text-dim);
+      font-weight: 400;
+      max-width: 600px;
+      line-height: 1.55;
+    }
+
+    .hero-stats {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0;
+      font-size: 15px;
+    }
+
+    .hero-stat-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .hero-stat-item .stat-value {
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    .hero-stat-sep {
+      color: #3a3a3a;
+      margin: 0 14px;
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .hero-cta {
+      margin-top: 4px;
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border: 1px solid var(--green);
+      color: var(--green);
+      background: transparent;
+      font-size: 15px;
+      font-weight: 500;
+      border-radius: 6px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      font-family: inherit;
+    }
+
+    .btn-outline:hover {
+      background: var(--green-dim);
+    }
+
+    .btn-solid {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      background: var(--green);
+      color: #000;
+      font-size: 15px;
+      font-weight: 600;
+      border-radius: 6px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.2s;
+      font-family: inherit;
+    }
+
+    .btn-solid:hover { opacity: 0.88; }
+
+    /* ─── ABOUT ────────────────────────────────────────────── */
+    .about-bio {
+      font-size: 17px;
+      color: var(--text-dim);
+      line-height: 1.75;
+      max-width: 780px;
+      margin-bottom: 32px;
+    }
+
+    .availability-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      background: var(--green-dim);
+      border: 1px solid var(--green-border);
+      border-radius: 100px;
+      font-size: 14px;
+      color: var(--green);
+      font-weight: 500;
+      margin-bottom: 32px;
+    }
+
+    .languages-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .lang-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 16px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .lang-tag span {
+      font-weight: 400;
+      color: var(--green);
+    }
+
+    .exp-duration {
+      display: inline-block;
+      padding: 2px 8px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-left: 8px;
+      vertical-align: middle;
+      font-weight: 400;
+      white-space: nowrap;
+    }
+
+    /* ─── EXPERIENCE ───────────────────────────────────────── */
+    .timeline {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      bottom: 0;
+      width: 1px;
+      background: var(--border);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 32px;
+      padding-bottom: 48px;
+    }
+
+    .timeline-item:last-child { padding-bottom: 0; }
+
+    .timeline-dot {
+      position: absolute;
+      left: -4px;
+      top: 8px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--green);
+      border: 2px solid var(--bg);
+    }
+
+    .exp-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .exp-card:hover { border-color: var(--green-border); transform: translateY(-2px); }
+    .exp-card.open  { border-color: var(--green-border); }
+
+    .exp-trigger {
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      cursor: pointer;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .exp-trigger-main { flex: 1; min-width: 0; }
+
+    .exp-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 4px;
+      flex-wrap: wrap;
+    }
+
+    .exp-company {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+
+    .exp-dates {
+      font-size: 13px;
+      color: var(--text-muted);
+      white-space: nowrap;
+      padding-top: 3px;
+    }
+
+    .exp-title {
+      font-size: 15px;
+      color: var(--text-dim);
+      font-weight: 400;
+    }
+
+    .exp-arrow {
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      color: var(--text-muted);
+      transition: transform 0.3s ease, color 0.2s;
+    }
+
+    .exp-card.open .exp-arrow {
+      transform: rotate(180deg);
+      color: var(--green);
+    }
+
+    .exp-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.45s ease;
+    }
+
+    .exp-card.open .exp-body { max-height: 2400px; }
+
+    .exp-body-inner {
+      padding: 20px 28px 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    .exp-industry {
+      display: inline-block;
+      padding: 3px 10px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+      margin-bottom: 20px;
+    }
+
+    .exp-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .exp-bullets li {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .exp-bullets li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 5px;
+      height: 1px;
+      background: var(--green);
+    }
+
+    /* ─── ACHIEVEMENTS ─────────────────────────────────────── */
+    .achievements-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 16px;
+    }
+
+    .ach-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .ach-card:hover {
+      border-color: var(--green-border);
+      transform: translateY(-2px);
+    }
+
+    .ach-metric {
+      font-size: clamp(22px, 3vw, 30px);
+      font-weight: 700;
+      color: var(--green);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .ach-context {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ─── SKILLS ───────────────────────────────────────────── */
+    .skills-groups {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .skill-group h3 {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 14px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-tag {
+      padding: 7px 14px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 13px;
+      color: var(--text-dim);
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .skill-tag:hover {
+      border-color: var(--green-border);
+      color: var(--text);
+    }
+
+    /* ─── CERTIFICATIONS ───────────────────────────────────── */
+    .certs-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+
+    .certs-subsection h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cert-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .cert-list li {
+      font-size: 14px;
+      color: var(--text-muted);
+      padding-left: 16px;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .cert-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 5px;
+      height: 1px;
+      background: var(--green);
+    }
+
+    .strengths-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 12px;
+    }
+
+    .strength-tag {
+      padding: 4px 10px;
+      background: var(--green-dim);
+      border: 1px solid var(--green-border);
+      border-radius: 100px;
+      font-size: 12px;
+      color: var(--green);
+      font-weight: 500;
+    }
+
+    /* ─── CONTACT ──────────────────────────────────────────── */
+    #contact {
+      padding-bottom: 60px;
+    }
+
+    .contact-sub {
+      font-size: 17px;
+      color: var(--text-muted);
+      margin-bottom: 48px;
+      max-width: 500px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-field label {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .form-field input,
+    .form-field textarea {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 12px 14px;
+      color: var(--text);
+      font-size: 14px;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s;
+      resize: vertical;
+    }
+
+    .form-field input:focus,
+    .form-field textarea:focus {
+      border-color: var(--green-border);
+    }
+
+    .form-field textarea { min-height: 120px; }
+
+    .form-status {
+      font-size: 13px;
+      padding: 10px 14px;
+      border-radius: 6px;
+      display: none;
+    }
+
+    .form-status.success {
+      display: block;
+      background: var(--green-dim);
+      border: 1px solid var(--green-border);
+      color: var(--green);
+    }
+
+    .form-status.error {
+      display: block;
+      background: rgba(255,80,80,0.08);
+      border: 1px solid rgba(255,80,80,0.25);
+      color: #ff5050;
+    }
+
+    .contact-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .contact-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px;
+    }
+
+    .contact-card h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .contact-card p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
+    .linkedin-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 12px 20px;
+      background: #0077b5;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .linkedin-btn:hover { opacity: 0.88; }
+
+    .linkedin-icon {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+
+    /* ─── FOOTER ───────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 48px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    /* ─── FADE-IN ANIMATION ────────────────────────────────── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .fade-in-delay-1 { transition-delay: 0.1s; }
+    .fade-in-delay-2 { transition-delay: 0.2s; }
+    .fade-in-delay-3 { transition-delay: 0.3s; }
+
+    /* ─── SECTION DIVIDER ──────────────────────────────────── */
+    .section-divider {
+      width: 100%;
+      height: 1px;
+      background: var(--border);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* ─── RESPONSIVE ───────────────────────────────────────── */
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; }
+      section { padding: 60px 24px; }
+      footer { padding: 24px; }
+
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+
+      .certs-grid { grid-template-columns: 1fr; }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 36px;
+        text-align: center;
+      }
+
+      .hero-photo-wrap { display: flex; justify-content: center; }
+
+      .hero-stats { justify-content: center; }
+
+      .hero-cta { display: flex; justify-content: center; }
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 0 20px; }
+      section { padding: 64px 20px; }
+
+      .form-row { grid-template-columns: 1fr; }
+
+      .hero-photo { width: 160px; height: 160px; }
+      .hero-photo-placeholder { width: 160px; height: 160px; }
+
+      .hero-stat-sep { margin: 0 8px; }
+
+      .achievements-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      }
+
+      .exp-card { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAV ──────────────────────────────────────────────── -->
+<nav>
+  <a href="#hero" class="nav-logo">
+    Miquel Gómez Roura
+    <span class="nav-avail">
+      <span class="nav-dot"></span>
+      Available
+    </span>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#achievements">Achievements</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#certifications">Certifications</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+  <button class="nav-hamburger" aria-label="Open menu" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" class="mobile-link">About</a>
+  <a href="#experience" class="mobile-link">Experience</a>
+  <a href="#achievements" class="mobile-link">Achievements</a>
+  <a href="#skills" class="mobile-link">Skills</a>
+  <a href="#certifications" class="mobile-link">Certifications</a>
+  <a href="#contact" class="mobile-link">Contact</a>
+</div>
+
+<main>
+
+<!-- ─── HERO ──────────────────────────────────────────────── -->
+<section id="hero">
+  <div class="hero-inner">
+
+    <div class="hero-photo-wrap fade-in">
+      <img
+        src="photo.jpg"
+        alt="Miquel Gómez Roura"
+        class="hero-photo"
+        onerror="this.outerHTML='<div class=\'hero-photo-placeholder\'>photo.jpg</div>'"
+      />
+    </div>
+
+    <div class="hero-content">
+      <p class="hero-greeting fade-in">Hello, I'm</p>
+
+      <h1 class="hero-name fade-in fade-in-delay-1">Miquel Gómez Roura <span class="hero-name-nick">(Miki)</span></h1>
+
+      <p class="hero-title fade-in fade-in-delay-1">
+        Senior Training &amp; L&amp;D · OKRs · Performance Management · Organisational Development
+      </p>
+
+      <p class="hero-headline fade-in fade-in-delay-2">
+        10+ years building training and learning functions from scratch — from CS operations to HR, across 4 continents.
+      </p>
+
+      <div class="hero-stats fade-in fade-in-delay-2">
+        <span class="hero-stat-item"><span class="stat-value">10+</span>&nbsp;years experience</span>
+        <span class="hero-stat-sep">·</span>
+        <span class="hero-stat-item"><span class="stat-value">3,000+</span>&nbsp;people enabled</span>
+        <span class="hero-stat-sep">·</span>
+        <span class="hero-stat-item">NPS&nbsp;<span class="stat-value">10→55</span></span>
+      </div>
+
+      <div class="hero-cta fade-in fade-in-delay-3">
+        <a href="#contact" class="btn-outline">Open to remote opportunities</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ─── ABOUT ─────────────────────────────────────────────── -->
+<section id="about">
+  <div class="section-label fade-in">About</div>
+  <h2 class="section-title fade-in">Who I am</h2>
+
+  <p class="about-bio fade-in">
+    Senior Training and Learning &amp; Development professional with 10+ years building training and people development functions from the ground up at high-growth international tech companies. Equally experienced in CS and BPO operations environments and HR and People teams — covering the full spectrum from agent training, onboarding, and LMS implementation to organisational development, OKR frameworks, performance management, and culture transformation. Proven track record scaling training operations globally while driving measurable business outcomes. Experienced people manager leading cross-functional teams of up to 20 across Europe, Latin America, Africa, and Asia.
+  </p>
+
+  <div class="availability-badge fade-in">
+    <span>✦</span>
+    Currently open to senior L&amp;D, Organisational Development, Training and QA Manager roles — full remote worldwide or remote-based in Europe.
+  </div>
+
+  <div class="languages-row fade-in">
+    <span class="lang-tag">Spanish <span>Native</span></span>
+    <span class="lang-tag">Catalan <span>Native</span></span>
+    <span class="lang-tag">English <span>Fluent</span></span>
+    <span class="lang-tag">French <span>Fluent</span></span>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ─── EXPERIENCE ────────────────────────────────────────── -->
+<section id="experience">
+  <div class="section-label fade-in">Experience</div>
+  <h2 class="section-title fade-in">Career timeline</h2>
+
+  <div class="timeline">
+
+    <!-- Bitpanda -->
+    <div class="timeline-item fade-in">
+      <div class="timeline-dot"></div>
+      <div class="exp-card">
+        <div class="exp-trigger">
+          <div class="exp-trigger-main">
+            <div class="exp-header">
+              <span class="exp-company">Bitpanda</span>
+              <span class="exp-dates">Jul 2024 – Present<span class="exp-duration">2 yrs</span></span>
+            </div>
+            <div class="exp-title">Learning &amp; Organisational Development Partner</div>
+          </div>
+          <svg class="exp-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="exp-body">
+          <div class="exp-body-inner">
+            <span class="exp-industry">Fintech / Crypto</span>
+            <ul class="exp-bullets">
+              <li>Sole owner of the Learning &amp; Development and Organisational Development function — acting as strategic partner to C-suite and senior leadership, and managing external consultancy partnerships to design and deliver people development and talent management programmes across a global, distributed organisation</li>
+              <li>Designed and implemented a company-wide performance management framework integrating OKRs, core values, and leadership principles — achieving 90% process adherence and aligning individual performance with strategic and cultural priorities</li>
+              <li>Built and deployed a company-wide OKR strategy from scratch, reaching 85% adoption within 2 months; established a cross-divisional OKR Champions network to drive long-term engagement and consistency</li>
+              <li>Defined and embedded new leadership principles into performance evaluations, feedback cycles, and talent development processes — reinforcing a consistent leadership culture across all management levels</li>
+              <li>Developed and launched a multi-level leadership development programme in partnership with an external consultancy — achieving 4.8/5 training satisfaction score across all management cohorts</li>
+              <li>Authored the company's 3-year Learning &amp; Development strategy, aligning people development initiatives with strategic business priorities and future organisational capability needs</li>
+              <li>Designed end-to-end LMS implementation strategy for internal and external stakeholders, consolidating all training into a centralised platform and improving accessibility, tracking, and reporting</li>
+              <li>Project-managed full onboarding programme redesign — achieving 90% new hire satisfaction rate and improving overall employee experience from day one</li>
+              <li>Deployed mandatory learning and compliance programmes across all departments, ensuring full organisational adherence to regulatory and internal standards</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Payretailers -->
+    <div class="timeline-item fade-in">
+      <div class="timeline-dot"></div>
+      <div class="exp-card">
+        <div class="exp-trigger">
+          <div class="exp-trigger-main">
+            <div class="exp-header">
+              <span class="exp-company">Payretailers</span>
+              <span class="exp-dates">May 2023 – Jul 2024<span class="exp-duration">1 yr 3 mos</span></span>
+            </div>
+            <div class="exp-title">Global Head of Learning &amp; Culture</div>
+          </div>
+          <svg class="exp-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="exp-body">
+          <div class="exp-body-inner">
+            <span class="exp-industry">Fintech / Payments</span>
+            <ul class="exp-bullets">
+              <li>Built the entire Learning &amp; Development and Culture function from scratch — owning the full people development agenda across Barcelona HQ and Latin America, and leading cross-functional stakeholder management to embed learning and values across the entire organisation</li>
+              <li>Established the company's inaugural OKR framework and led company-wide implementation, aligning all teams from leadership to individual contributors around measurable strategic objectives</li>
+              <li>Implemented Leapsome company-wide as the performance management and OKR platform for 450+ employees — achieving 91% adherence in the first review cycle and establishing a consistent, scalable review process</li>
+              <li>Designed and launched a comprehensive onboarding programme across Barcelona HQ and Latin America, streamlining new hire integration and reducing time-to-productivity</li>
+              <li>Deployed an LMS integrated with a gamification engine, driving engagement with learning content across the organisation</li>
+              <li>Developed a leadership development programme directly impacting 45+ organisational leaders</li>
+              <li>Led culture transformation: redefined core company values and embedded them across the full employee lifecycle — recruitment, hiring, onboarding, promotion criteria, performance management, internal communications, external communications, and learning &amp; development</li>
+              <li>Owned and managed the L&amp;D budget, driving annual planning and resource allocation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wallbox -->
+    <div class="timeline-item fade-in">
+      <div class="timeline-dot"></div>
+      <div class="exp-card">
+        <div class="exp-trigger">
+          <div class="exp-trigger-main">
+            <div class="exp-header">
+              <span class="exp-company">Wallbox Chargers</span>
+              <span class="exp-dates">Oct 2021 – May 2023<span class="exp-duration">1 yr 8 mos</span></span>
+            </div>
+            <div class="exp-title">Head of Training, Documentation &amp; Support Website</div>
+          </div>
+          <svg class="exp-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="exp-body">
+          <div class="exp-body-inner">
+            <span class="exp-industry">EV Technology</span>
+            <ul class="exp-bullets">
+              <li>Built and led three functions from scratch — Training, Documentation, and Support Web — hiring and restructuring a team including Training Specialists, LMS Administrators, and a Documentation Manager, and owning the full Opex &amp; Capex budget and strategic planning cycle</li>
+              <li>Defined and implemented a global training strategy across 9 countries, conducting strategic training needs analysis and aligning programmes with organisational priorities</li>
+              <li>Implemented a global LMS with 190+ courses in 8 languages — onboarding 3,200+ users across 9 countries within the first 4 months of launch</li>
+              <li>Launched a monetised training and certification programme for external installers and CPOs — generating €50K in revenue within the first 3 months</li>
+              <li>Managed E2E rollout of a conversational chatbot — reducing inbound Customer Service contacts by 12%</li>
+              <li>Implemented a centralised Knowledge Base serving both internal CS teams and external users — improving self-service resolution and reducing agent dependency</li>
+              <li>Redesigned translation and localisation processes across 8 languages — reducing costs by 60% while maintaining quality</li>
+              <li>Implemented BetterWorks company-wide for OKR management and performance tracking, establishing a centralised framework for goal alignment and progress visibility across the organisation</li>
+              <li>Defined KPI framework and implemented Kirkpatrick four-level evaluation model across all training initiatives, establishing measurable ROI reporting</li>
+              <li>Led creation of the new Wallbox support website across 14 countries, managing the full project from business case to launch</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Glovo -->
+    <div class="timeline-item fade-in">
+      <div class="timeline-dot"></div>
+      <div class="exp-card">
+        <div class="exp-trigger">
+          <div class="exp-trigger-main">
+            <div class="exp-header">
+              <span class="exp-company">Glovo</span>
+              <span class="exp-dates">Nov 2018 – Oct 2021<span class="exp-duration">3 yrs</span></span>
+            </div>
+            <div class="exp-title">Global Training &amp; Employee Experience Manager</div>
+          </div>
+          <svg class="exp-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="exp-body">
+          <div class="exp-body-inner">
+            <span class="exp-industry">Marketplace / Tech</span>
+            <ul class="exp-bullets">
+              <li>Led the global externalisation of Customer Support training, scaling operations from 200 to 2,500 agents across 14 international BPO hubs</li>
+              <li>Designed and implemented a scalable global training framework and centralised Totara LMS — standardising onboarding and upskilling for 3,000+ agents and enabling consistent learning experiences across all regions</li>
+              <li>Built and managed a global training team of 20 professionals across Africa, South America, Europe, and Asia — including regional training managers, e-learning specialists, and facilitators</li>
+              <li>Oversaw QA strategy for support hubs in Poland and Portugal — improving QA performance from 60% to 85% through standardised evaluation frameworks and coaching methodologies</li>
+              <li>Created and led the Agent Experience (AX) department — driving Agent NPS from 10 to 55 within 6 months through targeted employee experience and frontline enablement initiatives</li>
+              <li>Reduced agent AHT by 15% and learning curve by 2 weeks through redesigned onboarding and continuous upskilling programmes</li>
+              <li>Directed design and deployment of diverse learning solutions including e-learning modules, interactive videos, knowledge assessments, and gamified content</li>
+              <li>Partnered with senior leadership and external vendors to assess organisational training needs, define career pathways, and govern resource allocation</li>
+              <li>Won Best Media &amp; Technology Project award for LMS rollout across 17 countries in 14 languages</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- eDreams Senior -->
+    <div class="timeline-item fade-in">
+      <div class="timeline-dot"></div>
+      <div class="exp-card">
+        <div class="exp-trigger">
+          <div class="exp-trigger-main">
+            <div class="exp-header">
+              <span class="exp-company">eDreams ODIGEO</span>
+              <span class="exp-dates">Oct 2017 – Oct 2018<span class="exp-duration">1 yr</span></span>
+            </div>
+            <div class="exp-title">Group CS Senior Training Specialist</div>
+          </div>
+          <svg class="exp-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="exp-body">
+          <div class="exp-body-inner">
+            <span class="exp-industry">Travel / E-commerce</span>
+            <ul class="exp-bullets">
+              <li>Managed implementation and standardisation of training programmes across all external BPO centres — coordinating, validating, and managing all training activities and centre training hours globally</li>
+              <li>Travelled 25% of time delivering Train-the-Trainer (TTT) sessions to trainers, team leaders, and QA departments across Europe, Africa, and Asia</li>
+              <li>Led opening of new call centre in Sofia, Bulgaria — overseeing full training setup, content rollout, and agent onboarding for the new site</li>
+              <li>Created and standardised a full learning content library across all external centres — handouts, cheatsheets, role plays, exercise books, knowledge tests, group activities, interactive materials, and videos</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- eDreams Specialist -->
+    <div class="timeline-item fade-in">
+      <div class="timeline-dot"></div>
+      <div class="exp-card">
+        <div class="exp-trigger">
+          <div class="exp-trigger-main">
+            <div class="exp-header">
+              <span class="exp-company">eDreams ODIGEO</span>
+              <span class="exp-dates">Feb 2014 – Oct 2017<span class="exp-duration">3 yrs 8 mos</span></span>
+            </div>
+            <div class="exp-title">Training Specialist</div>
+          </div>
+          <svg class="exp-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="exp-body">
+          <div class="exp-body-inner">
+            <span class="exp-industry">Travel / E-commerce</span>
+            <ul class="exp-bullets">
+              <li>Designed and delivered training programmes for new hires and agents across multiple external BPO centres, including induction processes with role plays, in-tray exercises, and group discussions</li>
+              <li>Conducted Training Needs Analysis, created Training Plans and Duty Rosters, and managed all training coordination and reporting across outsourced centres</li>
+              <li>Implemented Kirkpatrick evaluation model across all programmes — measuring reaction, learning, behaviour, and results through knowledge tests and feedback tools</li>
+              <li>Delivered technical GDS training (Amadeus, Sabre, Galileo) alongside CS skills, sales fundamentals, constructive feedback, and TTT programmes</li>
+              <li>Quality Analyst (Apr–Sep 2014): calibrated training standards with outsourced centres and oversaw QA control of the financial department</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- eDreams Consultant -->
+    <div class="timeline-item fade-in">
+      <div class="timeline-dot"></div>
+      <div class="exp-card">
+        <div class="exp-trigger">
+          <div class="exp-trigger-main">
+            <div class="exp-header">
+              <span class="exp-company">eDreams ODIGEO</span>
+              <span class="exp-dates">Nov 2012 – Feb 2014<span class="exp-duration">1 yr 3 mos</span></span>
+            </div>
+            <div class="exp-title">Senior Travel Consultant &amp; GDS Specialist</div>
+          </div>
+          <svg class="exp-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="exp-body">
+          <div class="exp-body-inner">
+            <span class="exp-industry">Travel / E-commerce</span>
+            <ul class="exp-bullets">
+              <li>Managed end-to-end customer service and travel sales operations for UK and Spanish markets using Amadeus, Sabre, and Galileo GDS platforms</li>
+              <li>Drove revenue through upselling and cross-selling ancillary services; conducted proactive outbound sales campaigns during peak seasons to strengthen customer retention</li>
+              <li>Delivered professional omnichannel customer support via phone, email, and chat, consistently meeting service quality and satisfaction standards</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ─── ACHIEVEMENTS ──────────────────────────────────────── -->
+<section id="achievements">
+  <div class="section-label fade-in">Achievements</div>
+  <h2 class="section-title fade-in">Results that speak</h2>
+
+  <div class="achievements-grid">
+
+    <div class="ach-card fade-in">
+      <div class="ach-metric">NPS 10 → 55</div>
+      <div class="ach-context">Agent NPS in 6 months (Glovo)</div>
+    </div>
+
+    <div class="ach-card fade-in fade-in-delay-1">
+      <div class="ach-metric">85%</div>
+      <div class="ach-context">OKR adoption company-wide in 2 months (Bitpanda)</div>
+    </div>
+
+    <div class="ach-card fade-in fade-in-delay-2">
+      <div class="ach-metric">91%</div>
+      <div class="ach-context">Performance management adherence, first cycle (Payretailers)</div>
+    </div>
+
+    <div class="ach-card fade-in">
+      <div class="ach-metric">3,200+</div>
+      <div class="ach-context">Users onboarded onto global LMS in 4 months (Wallbox)</div>
+    </div>
+
+    <div class="ach-card fade-in fade-in-delay-1">
+      <div class="ach-metric">€50K</div>
+      <div class="ach-context">Revenue in 3 months from monetised certification programme (Wallbox)</div>
+    </div>
+
+    <div class="ach-card fade-in fade-in-delay-2">
+      <div class="ach-metric">−60%</div>
+      <div class="ach-context">Cost reduction through translation process redesign across 8 languages</div>
+    </div>
+
+    <div class="ach-card fade-in">
+      <div class="ach-metric">QA 60→85%</div>
+      <div class="ach-context">QA improvement through coaching frameworks (Glovo)</div>
+    </div>
+
+    <div class="ach-card fade-in fade-in-delay-1">
+      <div class="ach-metric">4.8/5</div>
+      <div class="ach-context">Training satisfaction score — leadership development programme (Bitpanda)</div>
+    </div>
+
+    <div class="ach-card fade-in fade-in-delay-2">
+      <div class="ach-metric">−15% AHT</div>
+      <div class="ach-context">Reduced agent handle time via redesigned onboarding (Glovo)</div>
+    </div>
+
+    <div class="ach-card fade-in">
+      <div class="ach-metric">200 → 2,500</div>
+      <div class="ach-context">Agents scaled across 14 international BPO hubs (Glovo)</div>
+    </div>
+
+    <div class="ach-card fade-in fade-in-delay-1">
+      <div class="ach-metric">90%</div>
+      <div class="ach-context">New hire satisfaction rate — onboarding redesign (Bitpanda)</div>
+    </div>
+
+    <div class="ach-card fade-in fade-in-delay-2">
+      <div class="ach-metric">−12%</div>
+      <div class="ach-context">Inbound CS contacts reduced via E2E chatbot rollout (Wallbox)</div>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ─── SKILLS ────────────────────────────────────────────── -->
+<section id="skills">
+  <div class="section-label fade-in">Skills</div>
+  <h2 class="section-title fade-in">Areas of expertise</h2>
+
+  <div class="skills-groups">
+
+    <div class="skill-group fade-in">
+      <h3>Training &amp; L&amp;D</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Training Management</span>
+        <span class="skill-tag">Learning &amp; Development</span>
+        <span class="skill-tag">Instructional Design</span>
+        <span class="skill-tag">Training Needs Analysis</span>
+        <span class="skill-tag">LMS Implementation</span>
+        <span class="skill-tag">E-learning</span>
+        <span class="skill-tag">Gamification</span>
+        <span class="skill-tag">Kirkpatrick Model</span>
+        <span class="skill-tag">Onboarding</span>
+        <span class="skill-tag">Train-the-Trainer</span>
+      </div>
+    </div>
+
+    <div class="skill-group fade-in">
+      <h3>Organisational Development</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">OKR Design &amp; Implementation</span>
+        <span class="skill-tag">Performance Management</span>
+        <span class="skill-tag">Leadership Development</span>
+        <span class="skill-tag">Talent Management</span>
+        <span class="skill-tag">Culture Transformation</span>
+        <span class="skill-tag">Employee Experience</span>
+        <span class="skill-tag">Change Management</span>
+        <span class="skill-tag">Career Pathways</span>
+        <span class="skill-tag">Employer Branding</span>
+        <span class="skill-tag">Internal Communications</span>
+      </div>
+    </div>
+
+    <div class="skill-group fade-in">
+      <h3>Operations &amp; Technology</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">BPO &amp; CS Operations</span>
+        <span class="skill-tag">Quality Assurance</span>
+        <span class="skill-tag">Knowledge Management</span>
+        <span class="skill-tag">Vendor Management</span>
+        <span class="skill-tag">Leapsome</span>
+        <span class="skill-tag">BetterWorks</span>
+        <span class="skill-tag">Jira</span>
+        <span class="skill-tag">HRIS</span>
+        <span class="skill-tag">Agile Methodologies</span>
+        <span class="skill-tag">Budget Management</span>
+      </div>
+    </div>
+
+    <div class="skill-group fade-in">
+      <h3>Leadership</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Team Management (up to 20)</span>
+        <span class="skill-tag">Cross-functional Stakeholder Management</span>
+        <span class="skill-tag">Remote &amp; Distributed Team Leadership</span>
+        <span class="skill-tag">Multi-continent Project Delivery</span>
+        <span class="skill-tag">Strategic Planning</span>
+        <span class="skill-tag">Learning Analytics</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ─── CERTIFICATIONS ────────────────────────────────────── -->
+<section id="certifications">
+  <div class="section-label fade-in">Certifications</div>
+  <h2 class="section-title fade-in">Credentials &amp; development</h2>
+
+  <div class="certs-grid">
+
+    <div class="certs-subsection fade-in">
+      <h3>Certifications &amp; courses</h3>
+      <ul class="cert-list">
+        <li>Kirkpatrick Four Levels Evaluation</li>
+        <li>Gamification Systems Design</li>
+        <li>Goal Setting: Objectives and Key Results (OKRs)</li>
+        <li>Applying Analytics to Your Learning Program</li>
+        <li>Creating a Culture of Learning</li>
+        <li>Agile / Scrum Methodologies</li>
+        <li>10+ years continuous self-directed learning in Training, L&amp;D, OKRs, OD, and People Management</li>
+      </ul>
+    </div>
+
+    <div class="certs-subsection fade-in fade-in-delay-1">
+      <h3>Psychometric Assessments</h3>
+      <ul class="cert-list">
+        <li>Hogan Personality Assessment — Practitioner certified</li>
+        <li>Clifton Strengths — Top strengths:</li>
+      </ul>
+      <div class="strengths-row">
+        <span class="strength-tag">Achiever</span>
+        <span class="strength-tag">Strategist</span>
+        <span class="strength-tag">Arranger</span>
+        <span class="strength-tag">Developer</span>
+        <span class="strength-tag">Positive</span>
+        <span class="strength-tag">Adaptive</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ─── CONTACT ───────────────────────────────────────────── -->
+<section id="contact">
+  <div class="section-label fade-in">Contact</div>
+  <h2 class="section-title fade-in">Let's connect</h2>
+  <p class="contact-sub fade-in">Currently open to senior L&amp;D, Organisational Development, Training and QA Manager roles, as well as senior individual contributor positions. Full remote — worldwide or Europe-based.</p>
+
+  <div class="contact-grid">
+
+    <form class="contact-form fade-in" id="contactForm" novalidate>
+      <div class="form-row">
+        <div class="form-field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required />
+        </div>
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required />
+        </div>
+      </div>
+      <div class="form-field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Tell me about the role or opportunity…" required></textarea>
+      </div>
+      <div>
+        <button type="submit" class="btn-solid">Send message</button>
+      </div>
+      <div class="form-status" id="formStatus"></div>
+    </form>
+
+    <div class="contact-sidebar fade-in fade-in-delay-1">
+      <div class="contact-card">
+        <h4>Connect on LinkedIn</h4>
+        <p>View my full profile, recommendations, and professional history.</p>
+        <a
+          href="https://linkedin.com/in/miquelgomezroura"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="linkedin-btn"
+        >
+          <svg class="linkedin-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+          LinkedIn Profile
+        </a>
+      </div>
+
+      <div class="contact-card">
+        <h4>Availability</h4>
+        <p>Currently open to senior L&amp;D, Organisational Development, Training and QA Manager roles, as well as senior individual contributor positions. Full remote — worldwide or Europe-based.</p>
+        <div class="availability-badge" style="margin-top: 0; font-size: 13px;">
+          <span class="nav-dot"></span>
+          Available now
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<!-- ─── FOOTER ────────────────────────────────────────────── -->
+<footer>
+  <p>© 2025 Miquel Gómez Roura</p>
+</footer>
+
+<script>
+  // ─── MOBILE MENU ────────────────────────────────────────
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+  });
+
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+    });
+  });
+
+  document.addEventListener('click', e => {
+    if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+      mobileMenu.classList.remove('open');
+    }
+  });
+
+  // ─── FADE-IN ON SCROLL ──────────────────────────────────
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+  );
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // ─── CONTACT FORM ───────────────────────────────────────
+  const form = document.getElementById('contactForm');
+  const status = document.getElementById('formStatus');
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const message = form.message.value.trim();
+
+    if (!name || !email || !message) {
+      status.className = 'form-status error';
+      status.textContent = 'Please fill in all fields.';
+      return;
+    }
+
+    const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRe.test(email)) {
+      status.className = 'form-status error';
+      status.textContent = 'Please enter a valid email address.';
+      return;
+    }
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+
+    fetch('https://formspree.io/f/maqvalrk', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, message })
+    })
+    .then(res => {
+      if (res.ok) {
+        status.className = 'form-status success';
+        status.textContent = 'Message sent — I\'ll be in touch soon.';
+        form.reset();
+      } else {
+        return res.json().then(data => { throw new Error(data.errors ? data.errors.map(e => e.message).join(', ') : 'Submission failed'); });
+      }
+    })
+    .catch(err => {
+      status.className = 'form-status error';
+      status.textContent = err.message || 'Something went wrong. Please try via LinkedIn.';
+    })
+    .finally(() => {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send message';
+    });
+  });
+
+  // ─── EXPERIENCE ACCORDION ──────────────────────────────
+  document.querySelectorAll('.exp-trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      trigger.closest('.exp-card').classList.toggle('open');
+    });
+  });
+
+  // ─── NAV ACTIVE STATE ───────────────────────────────────
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  const navObserver = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => {
+            link.style.color = link.getAttribute('href') === '#' + entry.target.id
+              ? '#ffffff'
+              : '';
+          });
+        }
+      });
+    },
+    { threshold: 0.4 }
+  );
+
+  sections.forEach(s => navObserver.observe(s));
+</script>
+
+</body>
+</html>
