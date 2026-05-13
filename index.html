@@ -182,9 +182,15 @@
     }
 
     .hero-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .hero-top {
       display: grid;
       grid-template-columns: auto 1fr;
-      gap: 64px;
+      gap: 48px;
       align-items: center;
     }
 
@@ -866,6 +872,10 @@
       }
 
       .hero-inner {
+        gap: 32px;
+      }
+
+      .hero-top {
         grid-template-columns: 1fr;
         gap: 36px;
         text-align: center;
@@ -942,53 +952,55 @@
 <section id="hero">
   <div class="hero-inner">
 
-    <div class="hero-photo-wrap fade-in">
-      <img
-        src="photo.jpg"
-        alt="Miquel Gómez Roura"
-        class="hero-photo"
-        onerror="this.outerHTML='<div class=\'hero-photo-placeholder\'>photo.jpg</div>'"
-      />
+    <div class="hero-top">
+      <div class="hero-photo-wrap fade-in">
+        <img
+          src="photo.jpg"
+          alt="Miquel Gómez Roura"
+          class="hero-photo"
+          onerror="this.outerHTML='<div class=\'hero-photo-placeholder\'>photo.jpg</div>'"
+        />
+      </div>
+
+      <div class="hero-content">
+        <p class="hero-greeting fade-in">Hello, I'm</p>
+
+        <h1 class="hero-name fade-in fade-in-delay-1">Miquel Gómez Roura <span class="hero-name-nick">(Miki)</span></h1>
+
+        <p class="hero-title fade-in fade-in-delay-1">
+          Senior Training &amp; Learning &amp; Development Manager · OKRs · Performance Management · Organisational Development 
+          | Ex-Glovo · Ex-Wallbox · Ex-eDreams
+        </p>
+
+        <p class="hero-headline fade-in fade-in-delay-2">
+          10+ years building training and learning functions from scratch — from CS operations to HR, across 4 continents.
+        </p>
+
+        <div class="hero-stats fade-in fade-in-delay-2">
+          <span class="hero-stat-item"><span class="stat-value">10+</span>&nbsp;years experience</span>
+          <span class="hero-stat-sep">·</span>
+          <span class="hero-stat-item"><span class="stat-value">3,000+</span>&nbsp;people enabled</span>
+          <span class="hero-stat-sep">·</span>
+          <span class="hero-stat-item">NPS&nbsp;<span class="stat-value">10→55</span></span>
+        </div>
+
+        <div class="hero-cta fade-in fade-in-delay-3">
+          <a href="#contact" class="btn-outline">Open to remote opportunities</a>
+        </div>
+      </div>
     </div>
 
-    <div class="hero-content">
-      <p class="hero-greeting fade-in">Hello, I'm</p>
-
-      <h1 class="hero-name fade-in fade-in-delay-1">Miquel Gómez Roura <span class="hero-name-nick">(Miki)</span></h1>
-
-      <p class="hero-title fade-in fade-in-delay-1">
-        Senior Training &amp; Learning &amp; Development Manager · OKRs · Performance Management · Organisational Development 
-        | Ex-Glovo · Ex-Wallbox · Ex-eDreams
-      </p>
-
-      <p class="hero-headline fade-in fade-in-delay-2">
-        10+ years building training and learning functions from scratch — from CS operations to HR, across 4 continents.
-      </p>
-
-      <div class="hero-stats fade-in fade-in-delay-2">
-        <span class="hero-stat-item"><span class="stat-value">10+</span>&nbsp;years experience</span>
-        <span class="hero-stat-sep">·</span>
-        <span class="hero-stat-item"><span class="stat-value">3,000+</span>&nbsp;people enabled</span>
-        <span class="hero-stat-sep">·</span>
-        <span class="hero-stat-item">NPS&nbsp;<span class="stat-value">10→55</span></span>
-      </div>
-
-      <div class="hero-video fade-in fade-in-delay-3" style="margin: 8px 0; max-width: 620px; border-radius: 10px; overflow: hidden; border: 1px solid var(--border);">
-        <iframe
-          width="100%"
-          height="349"
-          src="https://www.youtube.com/embed/I-7i-VDrqJU"
-          title="Meet Miquel Gómez Roura"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-          style="display: block;"
-        ></iframe>
-      </div>
-
-      <div class="hero-cta fade-in fade-in-delay-3">
-        <a href="#contact" class="btn-outline">Open to remote opportunities</a>
-      </div>
+    <div class="hero-video fade-in" style="border-radius: 10px; overflow: hidden; border: 1px solid var(--border);">
+      <iframe
+        width="100%"
+        height="480"
+        src="https://www.youtube.com/embed/I-7i-VDrqJU"
+        title="Meet Miquel Gómez Roura"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        style="display: block;"
+      ></iframe>
     </div>
 
   </div>
