@@ -182,15 +182,9 @@
     }
 
     .hero-inner {
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-    }
-
-    .hero-top {
       display: grid;
       grid-template-columns: auto 1fr;
-      gap: 48px;
+      gap: 64px;
       align-items: center;
     }
 
@@ -872,10 +866,6 @@
       }
 
       .hero-inner {
-        gap: 32px;
-      }
-
-      .hero-top {
         grid-template-columns: 1fr;
         gap: 36px;
         text-align: center;
@@ -886,8 +876,6 @@
       .hero-stats { justify-content: center; }
 
       .hero-cta { display: flex; justify-content: center; }
-
-      .hero-video { max-width: 100% !important; }
     }
 
     @media (max-width: 600px) {
@@ -952,8 +940,7 @@
 <section id="hero">
   <div class="hero-inner">
 
-    <div class="hero-top">
-      <div class="hero-photo-wrap fade-in">
+    <div class="hero-photo-wrap fade-in">
         <img
           src="photo.jpg"
           alt="Miquel Gómez Roura"
@@ -984,23 +971,9 @@
           <span class="hero-stat-item">NPS&nbsp;<span class="stat-value">10→55</span></span>
         </div>
 
-        <div class="hero-cta fade-in fade-in-delay-3">
-          <a href="#contact" class="btn-outline">Open to remote opportunities</a>
-        </div>
+      <div class="hero-cta fade-in fade-in-delay-3">
+        <a href="#contact" class="btn-outline">Open to remote opportunities</a>
       </div>
-    </div>
-
-    <div class="hero-video fade-in" style="border-radius: 10px; overflow: hidden; border: 1px solid var(--border);">
-      <iframe
-        width="100%"
-        height="480"
-        src="https://www.youtube.com/embed/I-7i-VDrqJU"
-        title="Meet Miquel Gómez Roura"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        style="display: block;"
-      ></iframe>
     </div>
 
   </div>
